@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model RegisteredAnalytics.Models.AppUser
+<h1>Dashboard</h1>
+<table id="tblAnalytics">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Analytics Name</th>
+            <th>Analytics Type</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListOfUsers)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.Password</td>
+                <td style="text-align:center">
+                    <a class="btnAction btnEdit" href="javascript:;">Edit</a>
+                    <a style="margin-left: 5px;" class="btnAction btnView" href="javascript:;">View</a>
+                    <a style="margin-left: 5px; background: #ee3129;" class="btnAction btnDelete" href="javascript:;">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
